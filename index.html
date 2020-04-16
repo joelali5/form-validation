@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create An Account</h2>
+        </div>
+
+        <form class="form" id="form">
+            <div class="form__control">
+                <small class="small">Error message</small>
+                <input type="text" id="username" class="form__input" placeholder="Username" required>
+                <label class="label" for="username">Username</label>
+                <i class="fas fa-check-square"></i>
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+
+            <div class="form__control">
+                <small class="small">Error message</small>
+                <input type="email" id="email" class="form__input" placeholder="Email" required>
+                <label class="label" for="email">Email</label>
+                <i class="fas fa-check-square"></i>
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+
+            <div class="form__control">
+                <small class="small">Error message</small>
+                <input type="password" id="password" class="form__input" placeholder="password" required>
+                <label class="label" for="password">password</label>
+                <i class="fas fa-check-square"></i>
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+
+            <div class="form__control">
+                <small class="small">Error message</small>
+                <input type="password" id="password2" class="form__input" placeholder="confirm password" required>
+                <label class="label" for="password2">confirm password</label>
+                <i class="fas fa-check-square"></i>
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+
+            <div class="form__radio-group">
+                <input type="radio" id="male" name="gender" class="form__radio-input">
+                <label for="male" class="label">
+                    <span class="form__radio-button"></span>    
+                    Male
+                </label>
+            </div>
+
+            <div class="form__radio-group">
+                <input type="radio" id="female" name="gender" class="form__radio-input">
+                <label for="female" class="label">
+                    <span class="form__radio-button"></span>
+                    Female
+                </label>
+                
+            </div>
+
+
+            <input id="submit" class="submit" type="submit" value="Submit">
+        </form>
+
+    </div>
+    <script src="js/form.js"></script>
+</body>
+</html>

@@ -1,125 +1,197 @@
 *,
-::before,
-::after {
-    box-sizing: border-box;
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
+html{
+    font-size: 62.5%;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
     font-weight: 700;
-    background-color: rgb(250, 171, 162);
+    background-color: rgb(245, 206, 206);
 }
 
 .container{
-    width: 450px;
-    background-color:#f0f0f0;
-    margin: 0 auto;
-    overflow: hidden;
-    margin-top: 40px;
-    border-radius: 20px;
-
+   background-color: rgb(250, 250, 244);
+   width: 45rem;
+   margin: 0 auto;
+   margin-top: 2.5rem;
+   overflow: hidden;
+   border-radius: 1rem;
 }
 
-.header {
+.header{
+    padding: 2rem 3rem;
     background-color: rgb(195, 191, 191);
-    padding: 20px 30px;
 }
 
-.header h2 {
-    margin: 0;
-    background-image: linear-gradient(to right,  rgb(240, 145, 134), rgb(92, 13, 4));
+.header h2{
+    font-size: 1.8rem;
+    background-image: linear-gradient(to right, rgb(250, 250, 244), rgb(250, 117, 117));
     -webkit-background-clip: text;
     color: transparent;
 }
 
-.form {
-    padding: 20px 30px;
+.form{
+    padding: 2rem 3rem;
 }
 
-.form-control {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+.form__control{
+    margin-bottom: 2rem;
     position: relative;
 }
 
-.form-control label {
+.form__control.success input{
+    border: 1px solid rgb(8, 148, 26);
+}
+
+.form__control.error input{
+    border: 1px solid rgb(250, 4, 4);
+}
+
+.form__control.success i.fa-check-square{
+    visibility: visible;
+    color: rgb(8, 148, 26);
+}
+
+.form__control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: rgb(250, 4, 4);
+}
+
+.small{
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: block;
+    margin-left: 1.1rem;
+    margin-bottom: .5rem;
+    visibility: hidden;
+}
+
+.small.error{
+    visibility: visible;
+}
+
+.form__input{
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 5rem;
+    margin-bottom: .6rem;
+}
+
+.form__input:focus{
+    outline: none;
+    box-shadow: 0 1rem 3rem rgba(8, 8, 8, .1);
+    border-bottom: 3px solid rgb(8, 148, 26);
+}
+
+.form__input:focus:invalid{
+    border-bottom: 3px solid rgb(250, 4, 4);
+}
+
+.form__input:focus::-webkit-input-placeholder{
+    color: rgb(143, 140, 140);
+    text-transform: capitalize;
+}
+
+
+.form__control i {
+    font-size: 1.8rem;
+    color: rgb(8, 148, 26);
+    position: absolute;
+    top: 3rem;
+    right: 1.5rem;
+    visibility: hidden;
+}
+
+.form__input:placeholder-shown + label{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6rem);
+}
+
+.form__control h4{
+    font-size: 1.5rem;
+    margin: -2rem 0 2rem 1rem;
+}
+
+.form__radio-group{
+    width: 48%;
     display: inline-block;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
+    color: rgb(143, 140, 140);
+    margin-bottom: 3rem;
 }
 
-.form-control input {
-    display: block;
-    width: 100%;
-    height: 35px;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 50px;
-    border: 1px solid #f0f0f0;
-    font-family: inherit;
+.label{
+    font-size: 1.4rem;
+    margin-left: 1.1rem;
+    text-transform: capitalize;
+    transition: all .3s;
+    position: relative;
 }
 
-.form-control input:focus {
-    outline: 0;
-    border: 1px solid rgb(250, 171, 162);
-}
-
-.form-control.success input {
-    border-color: #00ff00;
-}
-
-.form-control.error input {
-    border-color: #ff0000;
-}
-
-.form-control.success i.fa-check-square {
-    color: #00ff00;
-    visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-    color: #ff0000;
-    visibility: visible;
-}
-
-.form-control.error small {
-    color: #ff0000;
-    visibility: visible;
-}
-
-.form-control i {
+.form__radio-button{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid  rgb(245, 206, 206);
+    display: inline-block;
     position: absolute;
-    right: 10px;
-    top: 33px;
-    visibility: hidden;
+    left: 6.5rem;
+    top: .3rem;
 }
 
-.form-control small {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    visibility: hidden;
-}
-
-#submit {
+.form__radio-button::after{
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgb(250, 117, 117);
+}
+
+.form__radio-input{
+    display: none;
+}
+
+.form__radio-input:checked + .label .form__radio-button::after{
+    opacity: 1; 
+}
+
+
+.submit{
     width: 100%;
-    padding: 10px;
-    background-color: rgb(250, 171, 162);
-    border: rgb(250, 171, 162);
-    border-radius: 10px;
+    padding: 1rem;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: rgb(245, 206, 206);
+    border: none;
+    border-radius: 5rem;   
+    color: #fff;
+    transition: all .5s;
 }
 
-#submit:focus {
-    outline: 0;
-    border: 1px solid rgb(250, 171, 162);
+.submit:focus{
+    outline: none;
+    box-shadow: 0 1rem 3rem rgba(8, 8, 8, .1);
 }
 
-
-
-
-
-
+.submit:active{
+    transform: translateY(3px);
+}
