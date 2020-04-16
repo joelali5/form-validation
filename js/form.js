@@ -8,7 +8,6 @@ const Password2 = document.getElementById('password2');
 
 Form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     checkInputs();
 });
 
@@ -17,34 +16,40 @@ function checkInputs() {
     const emailVal = Email.value.trim();
     const passwordVal = Password.value.trim();
     const Password2Val = Password2.value.trim();
+    const radioMale = document.getElementById('male');
+    const radioFemale = document.getElementById('female');
 
-    //An if statement to check the inputs
+    //Check the inputs
     if(usernameVal === '') {
-        errorFn(username, 'Username cannot be blank');
+        errorFn(username, 'Please enter your username');
     } else {
         successFn(username);
     }
 
     if(emailVal === '') {
-        errorFn(email, 'Email cannot be blank');
+        errorFn(email, 'Please enter your email');
     } else if(!isEmail(emailVal)) {
-        errorFn(email, 'Email is not valid');
+        errorFn(email, 'kindly enter a valid email add');
     } else {
         successFn(email);
     }
 
     if(passwordVal === '') {
-        errorFn(password, 'Password cannot be blank');
+        errorFn(password, 'Please enter your password');
     } else {
         successFn(password);
     }
 
     if(Password2Val === '') {
-        errorFn(password2, 'Password cannot be blank');
+        errorFn(password2, 'Please confirm your password');
     } else if(Password2Val !== passwordVal) {
-        errorFn(password2, 'Password does not match');
+        errorFn(password2, 'Password does not match. please try again.');
     }else {
         successFn(password2);
+    }
+
+    if(radioMale.checked === false && radioFemale.checked === false) {
+        alert('Please select a gender');
     }
 };
 
@@ -52,13 +57,13 @@ function checkInputs() {
 function errorFn(input, message) {
     const formControl = input.parentNode;
     const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
+    formControl.className = 'form__control error';
     small.innerText = message;
 };
 
 function successFn(input) {
     const formControl = input.parentNode;
-    formControl.className = 'form-control success';
+    formControl.className = 'form__control success';
 };
 
 function isEmail(email) {

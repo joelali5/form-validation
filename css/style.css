@@ -23,13 +23,183 @@ body{
    margin: 0 auto;
    margin-top: 2.5rem;
    overflow: hidden;
-   padding: 2rem;
    border-radius: 1rem;
 }
 
-.heading{
-    background-color: rgb(195, 191, 191);
+.header{
     padding: 2rem 3rem;
+    background-color: rgb(195, 191, 191);
+}
+
+.header h2{
+    font-size: 1.8rem;
+    background-image: linear-gradient(to right, rgb(250, 250, 244), rgb(250, 117, 117));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.form{
+    padding: 2rem 3rem;
+}
+
+.form__control{
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form__control.success input{
+    border: 1px solid rgb(8, 148, 26);
+}
+
+.form__control.error input{
+    border: 1px solid rgb(250, 4, 4);
+}
+
+.form__control.success i.fa-check-square{
+    visibility: visible;
+    color: rgb(8, 148, 26);
+}
+
+.form__control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: rgb(250, 4, 4);
+}
+
+.form__control small{
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: block;
+    margin-left: 1.1rem;
+    margin-bottom: .5rem;
+    visibility: hidden;
+}
+
+.form__control.error small{
+    visibility: visible;
+}
+
+.form__input{
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 5rem;
+    margin-bottom: .6rem;
+}
+
+.form__input:focus{
+    outline: none;
+    box-shadow: 0 1rem 3rem rgba(8, 8, 8, .1);
+    border-bottom: 3px solid rgb(8, 148, 26);
+}
+
+/* .form__input:focus:invalid{
+    border-bottom: 3px solid rgb(250, 4, 4);
+} */
+
+.form__input:focus::-webkit-input-placeholder{
+    color: rgb(143, 140, 140);
+    text-transform: capitalize;
+}
+
+
+.form__control i {
+    font-size: 1.8rem;
+    color: rgb(8, 148, 26);
+    position: absolute;
+    top: 3rem;
+    right: 1.5rem;
+    visibility: hidden;
+}
+
+.form__input:placeholder-shown + label{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6rem);
+}
+
+.form__control h4{
+    font-size: 1.5rem;
+    margin: -2rem 0 2rem 1rem;
+}
+
+.form__radio-group{
+    width: 48%;
+    display: inline-block;
+    color: rgb(143, 140, 140);
+    margin-bottom: 3rem;
+}
+
+.label{
+    font-size: 1.4rem;
+    margin-left: 1.1rem;
+    text-transform: capitalize;
+    transition: all .3s;
+    position: relative;
+}
+
+.form__radio-button{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid  rgb(245, 206, 206);
+    display: inline-block;
+    position: absolute;
+    left: 6.5rem;
+    top: .3rem;
+}
+
+.form__radio-button::after{
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgb(250, 117, 117);
+}
+
+.form__radio-input{
+    display: none;
+}
+
+.form__radio-input:checked + .label .form__radio-button::after{
+    opacity: 1; 
+}
+
+
+.btn{
+    width: 50%;
+    padding: 1rem;
+    margin: 0 auto;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: rgb(245, 206, 206);
+    border: none;
+    border-radius: 5rem;   
+    color: #fff;
+    transition: all .3s;
+}
+
+.btn:focus{
+    outline: none;
+    
+}
+
+.btn:hover{
+    transform: translateY(-5px);
+}
+
+.btn:active{
+    transform: translateY(3px);
+    box-shadow: 0 1rem 3rem rgba(8, 8, 8, .1);
 }
 
 
